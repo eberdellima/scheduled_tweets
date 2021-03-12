@@ -2,5 +2,7 @@
 
 # MainController documentation
 class MainController < ApplicationController
-  def index; end
+  def index
+    flash.now[:notice] = "Welcome notice!"
+  end
 end
