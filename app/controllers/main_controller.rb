@@ -3,6 +3,8 @@
 # MainController documentation
 class MainController < ApplicationController
   def index
-    flash.now[:notice] = "Welcome notice!"
+    return @user = User.find_by(id: session[:user_id]) unless session[:user_id].nil?
+
+    flash.now[:notice] = 'Welcome notice!'
   end
 end
